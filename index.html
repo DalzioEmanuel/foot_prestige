@@ -24,6 +24,7 @@
         <a href="#about">Sobre</a>
         <a href="#agency">Origem</a>
         <a href="#players">Jogadores</a>
+        <a href="players.html">Perfis</a>
         <a href="#services">Serviços</a>
         <a href="#contact">Contato</a>
       </nav>
@@ -303,22 +304,47 @@
         <div class="section-header">
           <span class="eyebrow">Clubes parceiros</span>
           <h2>Clubes e parcerias</h2>
-          <p>Alguns clubes com jogadores representados e parcerias de scouting.</p>
+          <p>Clubes com jogadores representados e parcerias de scouting em atuação.</p>
         </div>
-        <div class="partners-grid">
-          <a class="partner" href="https://www.alanyaspor.org.tr" target="_blank" rel="noopener" aria-label="Alanyaspor">
-            <img src="assets/logos/alanyaspor_logo.svg" alt="Alanyaspor logo" width="120" height="80" loading="lazy" />
-          </a>
-          <a class="partner" href="https://www.rcdmallorca.es" target="_blank" rel="noopener" aria-label="RCD Mallorca">
-            <img src="assets/logos/rcd_mallorca.svg" alt="RCD Mallorca logo" width="120" height="80" loading="lazy" />
-          </a>
-          <a class="partner" href="https://www.uslecce.it" target="_blank" rel="noopener" aria-label="US Lecce">
-            <img src="assets/logos/us_lecce_crest.svg" alt="US Lecce crest" width="120" height="80" loading="lazy" />
-          </a>
-          <a class="partner" href="https://fc-akhmat.ru" target="_blank" rel="noopener" aria-label="Akhmat Grozny">
-            <img src="assets/logos/akhmat_grozny.png" alt="FC Akhmat Grozny logo" width="120" height="80" loading="lazy" />
-          </a>
+        <div class="carousel-container">
+          <button class="carousel-btn carousel-prev" aria-label="Anterior">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+          </button>
+          <div class="carousel-wrapper">
+            <div class="partners-carousel" id="partnersCarousel">
+              <a class="partner-item" href="https://www.alanyaspor.org.tr" target="_blank" rel="noopener" aria-label="Alanyaspor">
+                <img src="assets/logos/alanyaspor_logo.svg" alt="Alanyaspor logo" width="120" height="80" loading="lazy" />
+              </a>
+              <a class="partner-item" href="https://www.rcdmallorca.es" target="_blank" rel="noopener" aria-label="RCD Mallorca">
+                <img src="assets/logos/rcd_mallorca.svg" alt="RCD Mallorca logo" width="120" height="80" loading="lazy" />
+              </a>
+              <a class="partner-item" href="https://www.uslecce.it" target="_blank" rel="noopener" aria-label="US Lecce">
+                <img src="assets/logos/us_lecce_crest.svg" alt="US Lecce crest" width="120" height="80" loading="lazy" />
+              </a>
+              <a class="partner-item" href="https://fc-akhmat.ru" target="_blank" rel="noopener" aria-label="Akhmat Grozny">
+                <img src="assets/logos/akhmat_grozny.png" alt="FC Akhmat Grozny logo" width="120" height="80" loading="lazy" />
+              </a>
+              <!-- Adicione mais clubes aqui no mesmo formato -->
+              <a class="partner-item" href="https://www.benfica.pt" target="_blank" rel="noopener" aria-label="SL Benfica">
+                <img src="assets/logos/benfica.svg" alt="SL Benfica logo" width="120" height="80" loading="lazy" />
+              </a>
+              <a class="partner-item" href="https://www.sporting.pt" target="_blank" rel="noopener" aria-label="Sporting CP">
+                <img src="assets/logos/sporting.svg" alt="Sporting CP logo" width="120" height="80" loading="lazy" />
+              </a>
+              <a class="partner-item" href="https://www.fcporto.pt" target="_blank" rel="noopener" aria-label="FC Porto">
+                <img src="assets/logos/fcporto.svg" alt="FC Porto logo" width="120" height="80" loading="lazy" />
+              </a>
+            </div>
+          </div>
+          <button class="carousel-btn carousel-next" aria-label="Próximo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+          </button>
         </div>
+        <div class="carousel-dots" id="carouselDots"></div>
       </div>
     </section>
 
