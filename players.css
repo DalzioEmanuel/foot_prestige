@@ -1,0 +1,267 @@
+/* Players page styles */
+.page-header {
+  text-align: center;
+  padding: 3rem 0 2rem;
+}
+
+.page-header h1 {
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  margin: 1rem 0;
+  color: #fff;
+}
+
+.page-header p {
+  color: var(--text-muted);
+  max-width: 42rem;
+  margin: 1rem auto 0;
+  font-size: 1.05rem;
+}
+
+.players-section {
+  padding: 3rem 0 4rem;
+}
+
+.players-full-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.player-profile {
+  width: 100%;
+}
+
+.player-profile.featured {
+  grid-column: span 2;
+}
+
+.profile-card {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  background: var(--surface);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 28px;
+  padding: 2rem;
+  min-height: 380px;
+  transition: all 0.25s ease;
+}
+
+.player-profile.featured .profile-card {
+  border-color: rgba(255, 95, 46, 0.25);
+  box-shadow: inset 0 0 0 1px rgba(255, 95, 46, 0.15);
+}
+
+.player-profile:not(.featured) .profile-card {
+  background: rgba(18, 24, 37, 0.95);
+  border-color: rgba(255, 255, 255, 0.06);
+}
+
+.profile-card:hover {
+  border-color: rgba(255, 95, 46, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+}
+
+.player-image {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+}
+
+.player-placeholder {
+  height: 280px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 95, 46, 0.18), rgba(255, 255, 255, 0.05));
+  position: relative;
+  overflow: hidden;
+}
+
+.player-placeholder::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.18), transparent 45%);
+  opacity: 0.55;
+}
+
+.profile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.profile-header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.profile-badge {
+  padding: 0.4rem 0.9rem;
+  background: linear-gradient(135deg, rgba(255, 95, 46, 0.95), rgba(255, 95, 46, 0.85));
+  color: #fff;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  box-shadow: 0 8px 16px rgba(255, 95, 46, 0.3);
+  white-space: nowrap;
+}
+
+.position-tag {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0.4rem 0.9rem;
+  background: rgba(255, 95, 46, 0.12);
+  color: #ffb79a;
+  border-radius: 8px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.profile-info {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.info-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.info-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 500;
+}
+
+.info-value {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.info-value.amount {
+  color: #ffb79a;
+  font-size: 1.1rem;
+}
+
+.profile-section {
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.profile-section h3 {
+  margin: 0 0 0.75rem;
+  color: #fff;
+  font-size: 1.05rem;
+}
+
+.profile-section p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.characteristics {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.characteristics li {
+  color: var(--text-muted);
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.characteristics li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #ffb79a;
+  font-weight: bold;
+}
+
+.contact-cta {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.contact-cta .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.cta-section {
+  padding: 3rem 0;
+}
+
+.cta-card {
+  background: linear-gradient(135deg, rgba(255, 95, 46, 0.1), transparent);
+  border: 1px solid rgba(255, 95, 46, 0.2);
+  border-radius: 28px;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.cta-card h2 {
+  margin: 0 0 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+.cta-card p {
+  margin: 0 0 1.5rem;
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+@media (max-width: 960px) {
+  .players-full-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .player-profile.featured {
+    grid-column: span 1;
+  }
+
+  .profile-card {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .page-header {
+    padding: 2rem 0 1.5rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .profile-info {
+    grid-template-columns: 1fr;
+  }
+
+  .characteristics {
+    grid-template-columns: 1fr;
+  }
+}
