@@ -82,12 +82,15 @@ class PartnersCarousel {
   init() {
     this.createDots();
     this.attachEventListeners();
+    this.updateCarousel();
     this.startAutoPlay();
+    
     window.addEventListener('resize', () => {
       const newItemsPerView = this.getItemsPerView();
       if (newItemsPerView !== this.itemsPerView) {
         this.itemsPerView = newItemsPerView;
         this.currentIndex = 0;
+        this.createDots();
         this.updateCarousel();
       }
     });
@@ -116,8 +119,13 @@ class PartnersCarousel {
   }
 
   updateCarousel() {
-    const offset = -this.currentIndex * (100 / this.itemsPerView);
-    this.carousel.style.transform = `translateX(${offset}%)`;
+    // Calcular deslocamento em pixels (cada item + gap)
+    const itemWidth = 160; // largura do item
+    const gap = 16; // 1rem = 16px
+    const itemTotalWidth = itemWidth + gap;
+    const offset = -this.currentIndex * itemTotalWidth * this.itemsPerView;
+    
+    this.carousel.style.transform = `translateX(${offset}px)`;
 
     // Update dots
     const dots = this.dotsContainer.querySelectorAll('.carousel-dot');
