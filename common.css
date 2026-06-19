@@ -197,19 +197,22 @@ textarea {
     display: inline-flex;
   }
 
+  /* Mobile: full-screen overlay menu for easier touch navigation */
   .site-nav {
-    position: absolute;
-    inset: 100% 0 0;
-    margin: 0.75rem;
-    border-radius: 26px;
-    padding: 1.25rem;
+    position: fixed;
+    inset: 0;
+    display: flex;
     flex-direction: column;
-    background: rgba(7, 11, 16, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.07);
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 4.5rem;
+    gap: 1rem;
+    background: rgba(7, 11, 16, 0.98);
+    border-radius: 0;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
-    transition: opacity 0.25s ease, transform 0.25s ease;
+    transform: translateY(-6px);
+    transition: opacity 200ms ease, transform 200ms ease;
   }
 
   .site-nav.show {
@@ -219,7 +222,31 @@ textarea {
   }
 
   .site-nav a {
-    padding: 0.9rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 1.1rem 1.25rem;
+    font-size: 1.1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+    color: var(--text-muted);
+  }
+
+  .site-nav a:focus,
+  .site-nav a:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .nav-close {
+    position: absolute;
+    top: 0.8rem;
+    right: 0.8rem;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
+    cursor: pointer;
   }
 }

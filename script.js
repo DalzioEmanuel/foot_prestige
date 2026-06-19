@@ -4,24 +4,63 @@ const contactForm = document.getElementById('contactForm');
 const formFeedback = document.getElementById('formFeedback');
 
 if (navToggle && siteNav) {
-  navToggle.addEventListener('click', () => {
-    const isOpen = siteNav.classList.toggle('show');
-    navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
+  const navClose = document.getElementById('navClose');
 
-  window.addEventListener('click', event => {
-    if (siteNav.classList.contains('show') && !siteNav.contains(event.target) && !navToggle.contains(event.target)) {
-      siteNav.classList.remove('show');
-      navToggle.setAttribute('aria-expanded', 'false');
+  function openMenu() {
+    const isOpen = siteNav.classList.add('show');
+    navToggle.setAttribute('aria-expanded', 'true');
+    // focus first focusable element inside menu
+    const focusable = siteNav.querySelectorAll('a, button');
+    if (focusable && focusable.length) focusable[0].focus();
+  }
+
+  function closeMenu() {
+    siteNav.classList.remove('show');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.focus();
+  }
+
+  navToggle.addEventListener('click', () => {
+    if (siteNav.classList.contains('show')) {
+      closeMenu();
+    } else {
+      openMenu();
     }
   });
 
-  // Close menu with Escape key
+  if (navClose) {
+    navClose.addEventListener('click', () => closeMenu());
+  }
+
+  // Close menu when clicking outside
+  window.addEventListener('click', event => {
+    if (siteNav.classList.contains('show') && !siteNav.contains(event.target) && !navToggle.contains(event.target)) {
+      closeMenu();
+    }
+  });
+
+  // Close menu with Escape key and trap focus while open
   window.addEventListener('keydown', event => {
     if (event.key === 'Escape' && siteNav.classList.contains('show')) {
-      siteNav.classList.remove('show');
-      navToggle.setAttribute('aria-expanded', 'false');
-      navToggle.focus();
+      closeMenu();
+      return;
+    }
+
+    if (!siteNav.classList.contains('show')) return;
+
+    if (event.key === 'Tab') {
+      const focusable = Array.from(siteNav.querySelectorAll('a, button'));
+      if (!focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
     }
   });
 }
