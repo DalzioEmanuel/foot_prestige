@@ -10,17 +10,19 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Pular para o conteúdo</a>
   <header class="site-header">
     <div class="container header-inner">
       <a href="#home" class="brand">FootPrestige</a>
-      <button class="nav-toggle" aria-label="Abrir menu" id="navToggle">
+      <button class="nav-toggle" aria-label="Abrir menu" id="navToggle" aria-controls="siteNav" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav class="site-nav" id="siteNav">
+      <nav class="site-nav" id="siteNav" role="navigation" aria-label="Menu principal">
         <a href="#home">Início</a>
         <a href="#about">Sobre</a>
+        <a href="#agency">Origem</a>
         <a href="#players">Jogadores</a>
         <a href="#services">Serviços</a>
         <a href="#contact">Contato</a>
@@ -28,13 +30,13 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="hero" id="home">
       <div class="container hero-content">
         <div>
           <span class="eyebrow">Agência de talentos</span>
           <h1>FootPrestige</h1>
-          <p>Conectamos jogadores de futebol com clubes e oportunidades internacionais, construindo carreiras de alto desempenho.</p>
+          <p>Agência verificada no Transfermarkt, conectando talentos de Portugal, Angola e Europa aos principais clubes internacionais.</p>
           <div class="hero-actions">
             <a href="#contact" class="btn btn-primary">Fale conosco</a>
             <a href="#players" class="btn btn-secondary">Veja os talentos</a>
@@ -73,7 +75,7 @@
         <div class="about-cards">
           <div class="card">
             <h3>Visão global</h3>
-            <p>Atuamos no Brasil e no exterior para ampliar oportunidades e colocar jogadores na posição certa.</p>
+            <p>Atuamos em Portugal, Angola e em parcerias com clubes europeus para ampliar oportunidades internacionais.</p>
           </div>
           <div class="card">
             <h3>Rede de contatos</h3>
@@ -81,7 +83,36 @@
           </div>
           <div class="card">
             <h3>Performance</h3>
-            <p>O atleta é o centro. Evaluamos técnica, mentalidade e preparo para oferecer suporte completo.</p>
+            <p>O atleta é o centro. Avaliamos técnica, mentalidade e preparo para oferecer suporte completo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="agency-info" id="agency">
+      <div class="container section-grid">
+        <div class="section-text">
+          <span class="eyebrow">Origem</span>
+          <h2>Fundada em Lisboa com forte presença em Angola</h2>
+          <p>FootPrestige nasceu para representar jogadores africanos e europeus em clubes de alto rendimento. A sede está em Odivelas, Lisboa, Portugal, com atuação também em Angola.</p>
+          <ul>
+            <li>Fundador e proprietário: Edson Queiroz, agente FIFA.</li>
+            <li>Direção executiva: Nuno Adão.</li>
+            <li>Scout principal: Collin Baptista.</li>
+          </ul>
+        </div>
+        <div class="about-cards">
+          <div class="card">
+            <h3>Fundação</h3>
+            <p>Perfil verificado no Transfermarkt desde 06/03/2024.</p>
+          </div>
+          <div class="card">
+            <h3>Atuação</h3>
+            <p>Presença em Portugal, Angola, Espanha, Itália, Turquia e Rússia.</p>
+          </div>
+          <div class="card">
+            <h3>Equipe</h3>
+            <p>Profissionais com expertise em negociação, scouting e gestão de carreira de atletas.</p>
           </div>
         </div>
       </div>
@@ -91,32 +122,33 @@
       <div class="container">
         <div class="section-header">
           <span class="eyebrow">Talentos</span>
-          <h2>Conheça nossos jogadores</h2>
+          <h2>Jogadores agenciados pela FootPrestige</h2>
+          <p>Equipe comprovada por Transfermarkt com 13 jogadores sob contrato, dos quais 4 atuam em ligas de primeira divisão.</p>
         </div>
         <div class="player-grid" id="playerGrid">
-          <article class="player-card" data-position="Atacante">
-            <div class="player-avatar"></div>
-            <h3>Lucas Silva</h3>
-            <p class="player-position">Atacante</p>
-            <p>Velocidade e finalização com alto potencial para grandes clubes.</p>
+          <article class="player-card" data-position="Médio Defensivo">
+            <div class="player-avatar" aria-hidden="true"></div>
+            <h3>Maestro</h3>
+            <p class="player-position">Médio Defensivo</p>
+            <p>Angola / Alanyaspor · contrato até 2029 · valor de mercado 7,00 M €.</p>
           </article>
-          <article class="player-card" data-position="Meio-campista">
-            <div class="player-avatar"></div>
-            <h3>Mateus Alves</h3>
-            <p class="player-position">Meio-campista</p>
-            <p>Visão de jogo, passe preciso e liderança no meio de campo.</p>
+          <article class="player-card" data-position="Extremo Direito">
+            <div class="player-avatar" aria-hidden="true"></div>
+            <h3>Zito Luvumbo</h3>
+            <p class="player-position">Extremo Direito</p>
+            <p>Angola / RCD Mallorca · contrato até 2026 · valor de mercado 3,00 M €.</p>
           </article>
-          <article class="player-card" data-position="Zagueiro">
-            <div class="player-avatar"></div>
-            <h3>André Ribeiro</h3>
-            <p class="player-position">Zagueiro</p>
-            <p>Defesa sólida, domínio aéreo e leitura de jogo eficiente.</p>
+          <article class="player-card" data-position="Defesa Central">
+            <div class="player-avatar" aria-hidden="true"></div>
+            <h3>Gaspar</h3>
+            <p class="player-position">Defesa Central</p>
+            <p>Angola / US Lecce · contrato até 2027 · valor de mercado 3,00 M €.</p>
           </article>
-          <article class="player-card" data-position="Goleiro">
-            <div class="player-avatar"></div>
-            <h3>Rafael Costa</h3>
-            <p class="player-position">Goleiro</p>
-            <p>Reflexos rápidos, grande presença de área e forte comunicação com a defesa.</p>
+          <article class="player-card" data-position="Médio Defensivo">
+            <div class="player-avatar" aria-hidden="true"></div>
+            <h3>Kelliano</h3>
+            <p class="player-position">Médio Defensivo</p>
+            <p>Angola / Akhmat Grozny · contrato até 2029 · valor de mercado 800 mil €.</p>
           </article>
         </div>
       </div>
@@ -142,6 +174,42 @@
             <h3>Imagem e marketing</h3>
             <p>Gestão de redes sociais, parcerias comerciais e posicionamento profissional do atleta.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="partners" id="partners">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Clubes parceiros</span>
+          <h2>Clubes e parcerias</h2>
+          <p>Alguns clubes com jogadores representados e parcerias de scouting.</p>
+        </div>
+        <div class="partners-grid">
+          <a class="partner" href="https://www.alanyaspor.org.tr" target="_blank" rel="noopener" aria-label="Alanyaspor">
+            <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="12" fill="#f7b500" />
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="20" fill="#07101f">ALY</text>
+            </svg>
+          </a>
+          <a class="partner" href="https://www.rcdmallorca.es" target="_blank" rel="noopener" aria-label="RCD Mallorca">
+            <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="12" fill="#c93b3b" />
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#fff">RCD</text>
+            </svg>
+          </a>
+          <a class="partner" href="https://www.uslecce.it" target="_blank" rel="noopener" aria-label="US Lecce">
+            <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="12" fill="#f05a28" />
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#07101f">LEC</text>
+            </svg>
+          </a>
+          <a class="partner" href="https://t.me/akhmat" target="_blank" rel="noopener" aria-label="Akhmat Grozny">
+            <svg width="120" height="80" viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+              <rect width="120" height="80" rx="12" fill="#2ea3a3" />
+              <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" font-size="18" fill="#07101f">AKH</text>
+            </svg>
+          </a>
         </div>
       </div>
     </section>
@@ -196,10 +264,18 @@
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" role="contentinfo">
     <div class="container footer-inner">
-      <p>© 2026 FootPrestige. Todos os direitos reservados.</p>
-      <p>Agência de representação esportiva para profissionais de futebol.</p>
+      <div>
+        <p>© 2026 FootPrestige. Todos os direitos reservados.</p>
+        <p>Base em Odivelas, Lisboa, Portugal. Atuação também em Angola e na Europa.</p>
+      </div>
+      <div class="footer-links">
+        <a href="https://www.transfermarkt.pt/footprestige/beraterfirma/berater/7132" target="_blank" rel="noopener" aria-label="Perfil da FootPrestige no Transfermarkt">Perfil Transfermarkt</a>
+        <a href="https://www.instagram.com/footprestige/" target="_blank" rel="noopener" aria-label="Instagram FootPrestige">Instagram @footprestige</a>
+        <a href="https://www.instagram.com/eddsonqueiroz/" target="_blank" rel="noopener" aria-label="Instagram de Edson Queiroz">Edson Queiroz (Instagram)</a>
+        <a href="https://pt.linkedin.com/in/edson-queiroz-7892a71b4" target="_blank" rel="noopener" aria-label="LinkedIn de Edson Queiroz">LinkedIn Edson Queiroz</a>
+      </div>
     </div>
   </footer>
 
